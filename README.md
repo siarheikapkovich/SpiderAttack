@@ -1,2 +1,2 @@
 # SpiderAttack
-Игра на Allegro
+Игра на Allegro (не закончена)
