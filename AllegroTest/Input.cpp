@@ -1,4 +1,4 @@
-#include "Input.h"
+п»ї#include "Input.h"
 
 CInput::CInput()
 {
@@ -7,7 +7,7 @@ CInput::CInput()
 	al_install_mouse();
 	al_register_event_source(m_Event_Queue, al_get_mouse_event_source());
 #else
-	// Под Android нужен touch
+	// РџРѕРґ Android РЅСѓР¶РµРЅ touch
 	al_install_touch_input();
 	al_register_event_source(m_Event_Queue, al_get_touch_input_event_source());
 #endif
@@ -30,7 +30,7 @@ int CInput::GetInput(int &ioMouse_x, int &ioMouse_y)
 	ioMouse_y = m_MouseState.y;
 	if (m_MouseState.buttons & 1)
 	{
-		// Нажатие кнопки
+		// РќР°Р¶Р°С‚РёРµ РєРЅРѕРїРєРё
 		return 1;
 	}
 	else

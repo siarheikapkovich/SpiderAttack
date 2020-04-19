@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <string>
 #include <vector>
 #include "GameMath.h"
@@ -7,14 +7,14 @@ using std::string;
 using std::vector;
 enum class E_OBJ_TYPE
 {
-	Null_Object,	// Объект не является подмножеством Static
-	Box_Simple,		// Ящик с низким уровнем выпадания вещей
-	Box_Improved,	// Ящик с повышенным уровнем выпадания вещей
-	Floor_Small,	// Растение для питания пауков
-	Item_Health,	// Аптечка +10%
-	Item_Aptec,		// Аптечка +30%
-	Item_Battery,	// Заряд аккумулятора +10%
-	Item_Board		// Печатная плата с запчастями
+	Null_Object,	// РћР±СЉРµРєС‚ РЅРµ СЏРІР»СЏРµС‚СЃСЏ РїРѕРґРјРЅРѕР¶РµСЃС‚РІРѕРј Static
+	Box_Simple,		// РЇС‰РёРє СЃ РЅРёР·РєРёРј СѓСЂРѕРІРЅРµРј РІС‹РїР°РґР°РЅРёСЏ РІРµС‰РµР№
+	Box_Improved,	// РЇС‰РёРє СЃ РїРѕРІС‹С€РµРЅРЅС‹Рј СѓСЂРѕРІРЅРµРј РІС‹РїР°РґР°РЅРёСЏ РІРµС‰РµР№
+	Floor_Small,	// Р Р°СЃС‚РµРЅРёРµ РґР»СЏ РїРёС‚Р°РЅРёСЏ РїР°СѓРєРѕРІ
+	Item_Health,	// РђРїС‚РµС‡РєР° +10%
+	Item_Aptec,		// РђРїС‚РµС‡РєР° +30%
+	Item_Battery,	// Р—Р°СЂСЏРґ Р°РєРєСѓРјСѓР»СЏС‚РѕСЂР° +10%
+	Item_Board		// РџРµС‡Р°С‚РЅР°СЏ РїР»Р°С‚Р° СЃ Р·Р°РїС‡Р°СЃС‚СЏРјРё
 };
 
 const int C_DEFAUTT_LIFE_LEVEL = 1;
@@ -24,15 +24,15 @@ class CGameObject
 public:
 	CGameObject() = default;
 		
-	//_ Может не проверять колизии, а сразу взаимодействие (если не пересекаются то и не взаимодействуют)????
+	//_ РњРѕР¶РµС‚ РЅРµ РїСЂРѕРІРµСЂСЏС‚СЊ РєРѕР»РёР·РёРё, Р° СЃСЂР°Р·Сѓ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёРµ (РµСЃР»Рё РЅРµ РїРµСЂРµСЃРµРєР°СЋС‚СЃСЏ С‚Рѕ Рё РЅРµ РІР·Р°РёРјРѕРґРµР№СЃС‚РІСѓСЋС‚)????
 	virtual bool IsCollision(CGameObject &inObject) = 0;
-	//_ Получение текущей текстуры объекта
+	//_ РџРѕР»СѓС‡РµРЅРёРµ С‚РµРєСѓС‰РµР№ С‚РµРєСЃС‚СѓСЂС‹ РѕР±СЉРµРєС‚Р°
 	virtual string GetTextureName() const = 0;
 	//_
 	void MoveToPosition(const float x, const float y) { m_Position = CVector2D(x, y); }
-	// Изменение внутреннего состояния объекта
+	// РР·РјРµРЅРµРЅРёРµ РІРЅСѓС‚СЂРµРЅРЅРµРіРѕ СЃРѕСЃС‚РѕСЏРЅРёСЏ РѕР±СЉРµРєС‚Р°
 	//virtual void Move() = 0;
-	// Взаимодействие текущего с другим объектом
+	// Р’Р·Р°РёРјРѕРґРµР№СЃС‚РІРёРµ С‚РµРєСѓС‰РµРіРѕ СЃ РґСЂСѓРіРёРј РѕР±СЉРµРєС‚РѕРј
 	//virtual void Process(CGameObject *object) = 0;
 	//_ 
 	//virtual bool IsMouseCliced(const int inMouseX, const int inMouseY) = 0;
@@ -45,20 +45,20 @@ public:
 	}
 	virtual ~CGameObject() {}
 protected:
-	CVector2D	m_Position;							// Мировая позиция
-	//CVector2D   m_Velosity;							// Скорость
-	float		m_Angle;							// Текущий угол поворота
-	//float		m_CollisionRadius;					// Радиус ограничивающего круга
-	E_OBJ_TYPE	m_Type;								// Тип объекта
-	// Для объектов с ограниченным временем
-	// существования (например взрыв)
-	// Для автоматического восстановления
-	// (регенерация) или уменьшения
-	// например при отравлении
-	//int32_t		m_LifeChangeDelta;					// Шаг изменения уровня жизни
-	// При значении равном или меньше ноля,
-	// объект уничтожается
-	//int32_t		m_Life = C_DEFAUTT_LIFE_LEVEL;		// Время (значение) жизни объекта
+	CVector2D	m_Position;							// РњРёСЂРѕРІР°СЏ РїРѕР·РёС†РёСЏ
+	//CVector2D   m_Velosity;							// РЎРєРѕСЂРѕСЃС‚СЊ
+	float		m_Angle;							// РўРµРєСѓС‰РёР№ СѓРіРѕР» РїРѕРІРѕСЂРѕС‚Р°
+	//float		m_CollisionRadius;					// Р Р°РґРёСѓСЃ РѕРіСЂР°РЅРёС‡РёРІР°СЋС‰РµРіРѕ РєСЂСѓРіР°
+	E_OBJ_TYPE	m_Type;								// РўРёРї РѕР±СЉРµРєС‚Р°
+	// Р”Р»СЏ РѕР±СЉРµРєС‚РѕРІ СЃ РѕРіСЂР°РЅРёС‡РµРЅРЅС‹Рј РІСЂРµРјРµРЅРµРј
+	// СЃСѓС‰РµСЃС‚РІРѕРІР°РЅРёСЏ (РЅР°РїСЂРёРјРµСЂ РІР·СЂС‹РІ)
+	// Р”Р»СЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРіРѕ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ
+	// (СЂРµРіРµРЅРµСЂР°С†РёСЏ) РёР»Рё СѓРјРµРЅСЊС€РµРЅРёСЏ
+	// РЅР°РїСЂРёРјРµСЂ РїСЂРё РѕС‚СЂР°РІР»РµРЅРёРё
+	//int32_t		m_LifeChangeDelta;					// РЁР°Рі РёР·РјРµРЅРµРЅРёСЏ СѓСЂРѕРІРЅСЏ Р¶РёР·РЅРё
+	// РџСЂРё Р·РЅР°С‡РµРЅРёРё СЂР°РІРЅРѕРј РёР»Рё РјРµРЅСЊС€Рµ РЅРѕР»СЏ,
+	// РѕР±СЉРµРєС‚ СѓРЅРёС‡С‚РѕР¶Р°РµС‚СЃСЏ
+	//int32_t		m_Life = C_DEFAUTT_LIFE_LEVEL;		// Р’СЂРµРјСЏ (Р·РЅР°С‡РµРЅРёРµ) Р¶РёР·РЅРё РѕР±СЉРµРєС‚Р°
 };
 
 class CObjectStatic : public CGameObject
@@ -78,7 +78,7 @@ private:
 class CObjectSpider final : public CGameObject
 {
 public:
-	// Функция уменьшает/увеличивает жизнь на значение delta
+	// Р¤СѓРЅРєС†РёСЏ СѓРјРµРЅСЊС€Р°РµС‚/СѓРІРµР»РёС‡РёРІР°РµС‚ Р¶РёР·РЅСЊ РЅР° Р·РЅР°С‡РµРЅРёРµ delta
 	//void UpdateLife(const int delta = -1) { m_Life += delta; }
 	//bool IsCollision(CGameObject *object) {}
 	string GetTextureName() const override;
@@ -92,7 +92,7 @@ private:
 class CObjectPlayer final : public CGameObject
 {
 public:
-	// Функция уменьшает/увеличивает жизнь на значение delta
+	// Р¤СѓРЅРєС†РёСЏ СѓРјРµРЅСЊС€Р°РµС‚/СѓРІРµР»РёС‡РёРІР°РµС‚ Р¶РёР·РЅСЊ РЅР° Р·РЅР°С‡РµРЅРёРµ delta
 	//void UpdateLife(const int delta = -1) { m_Life += delta; }
 	//bool IsCollision(CGameObject *object) {}
 	string GetTextureName() const override;

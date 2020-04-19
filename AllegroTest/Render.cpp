@@ -1,10 +1,10 @@
-#include "Render.h"
+п»ї#include "Render.h"
 CRender::CRender()
 {
 
 	al_init_image_addon();
 	m_Display = al_create_display(ScreenW, ScreenH);
-	//_ Загрузка текстур
+	//_ Р—Р°РіСЂСѓР·РєР° С‚РµРєСЃС‚СѓСЂ
 	m_Bitmap["Spider_1"] = al_load_bitmap("GFX/Spider_1.bmp");
 	al_convert_mask_to_alpha(m_Bitmap["Spider_1"], al_map_rgb(255, 0, 255));
 	m_Bitmap["Spider_2"] = al_load_bitmap("GFX/Spider_2.bmp");

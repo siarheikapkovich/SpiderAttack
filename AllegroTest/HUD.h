@@ -1,10 +1,10 @@
-#pragma once
+п»ї#pragma once
 #include "ObjectButton.h"
 
 enum class E_HUD_BUTTONS
 {
-	ButtonNull,		// Нет нажатия
-	ButtonExit,		// Выход из программы или возврат в предыдущее меню
+	ButtonNull,		// РќРµС‚ РЅР°Р¶Р°С‚РёСЏ
+	ButtonExit,		// Р’С‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹ РёР»Рё РІРѕР·РІСЂР°С‚ РІ РїСЂРµРґС‹РґСѓС‰РµРµ РјРµРЅСЋ
 	ButtonPersn,
 	ButtonItems,
 	ButtonWorld,

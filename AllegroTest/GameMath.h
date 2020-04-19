@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <cmath>
 
 const float PI = 3.1415926535f;

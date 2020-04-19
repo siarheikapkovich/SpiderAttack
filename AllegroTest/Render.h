@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 // allegro5
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_font.h>
@@ -18,12 +18,12 @@ enum class E_TEXTURES
 };
 
 /* 
- * Текстура грунта 128х128
- * размеры окна и игрового мира кратны ей
+ * РўРµРєСЃС‚СѓСЂР° РіСЂСѓРЅС‚Р° 128С…128
+ * СЂР°Р·РјРµСЂС‹ РѕРєРЅР° Рё РёРіСЂРѕРІРѕРіРѕ РјРёСЂР° РєСЂР°С‚РЅС‹ РµР№
 */
 
-const int ScreenW = 768;	// 128 Х 6
-const int ScreenH = 640;	// 128 Х 5
+const int ScreenW = 768;	// 128 РҐ 6
+const int ScreenH = 640;	// 128 РҐ 5
 
 struct SSprite
 {
@@ -35,7 +35,7 @@ struct SSprite
 
 /*
  * 
- * Отвечает за прорисовку объектов экранной области
+ * РћС‚РІРµС‡Р°РµС‚ Р·Р° РїСЂРѕСЂРёСЃРѕРІРєСѓ РѕР±СЉРµРєС‚РѕРІ СЌРєСЂР°РЅРЅРѕР№ РѕР±Р»Р°СЃС‚Рё
  * 
  *
 */
@@ -59,9 +59,9 @@ public:
 	{
 		m_Sprites.push_back(sprite);
 	}
-	//_ Создает спрайт и возвращает его ID
+	//_ РЎРѕР·РґР°РµС‚ СЃРїСЂР°Р№С‚ Рё РІРѕР·РІСЂР°С‰Р°РµС‚ РµРіРѕ ID
 	void CreateSprite(string inBitmapName, float in) {}
-	//_ Добавляет спрайт в очередь рендеринга
+	//_ Р”РѕР±Р°РІР»СЏРµС‚ СЃРїСЂР°Р№С‚ РІ РѕС‡РµСЂРµРґСЊ СЂРµРЅРґРµСЂРёРЅРіР°
 	void DrawSprite() {}
 	//_ 
 	CRender(const CRender &) = delete;
@@ -80,8 +80,8 @@ private:
 	CRender();
 
 	ALLEGRO_DISPLAY* m_Display;
-	//_ Очередь рендеринга
+	//_ РћС‡РµСЂРµРґСЊ СЂРµРЅРґРµСЂРёРЅРіР°
 	vector<SSprite> m_Sprites;
-	//_ Все загруженные ресурсы изображений
+	//_ Р’СЃРµ Р·Р°РіСЂСѓР¶РµРЅРЅС‹Рµ СЂРµСЃСѓСЂСЃС‹ РёР·РѕР±СЂР°Р¶РµРЅРёР№
 	map<string, ALLEGRO_BITMAP*> m_Bitmaps;
 };
